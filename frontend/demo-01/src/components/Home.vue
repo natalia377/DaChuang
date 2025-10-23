@@ -4,6 +4,8 @@
       <SiderBar></SiderBar>
     </div>
     <div class="content-container">
+      <!-- {{ count.count }}
+      <button @click = 'addcount'>+1</button> -->
       <router-view></router-view>
     </div>
   </div>
@@ -11,6 +13,10 @@
 
 <script setup>
 import SiderBar from './SiderBar.vue';
+// import { useCounterStore } from '../store';
+// const count = useCounterStore()
+// console.log(count.count)
+// const addcount = ()=>count.increment()
 </script>
 
 <style scoped>
