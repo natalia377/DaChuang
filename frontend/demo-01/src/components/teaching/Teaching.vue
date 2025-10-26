@@ -105,6 +105,13 @@
               <template #header>
                 <div class="card-header">
                   <span class="header-title">程序输入</span>
+                <el-button 
+                  class="run-button" 
+                  @click="runProgram"
+                >
+                <el-icon><Flag /></el-icon>
+                  运行代码
+                </el-button>
                 </div>
               </template>
               <textarea
@@ -122,13 +129,6 @@
               </template>
               <pre class="output-display">{{ runOutput || '运行程序后显示结果...' }}</pre>
             </el-card>
-          </div>
-
-          <div class="button-container">
-            <el-button type="primary" size="large" class="run-button" @click="runProgram">
-              <el-icon><Flag /></el-icon>
-              运行代码
-            </el-button>
           </div>
         </div>
       </div>
@@ -519,6 +519,7 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   gap: 2px;
+  height: 35px;
 }
 
 .back-button {
@@ -527,9 +528,9 @@ onMounted(() => {
 }
 
 .nav-tab {
-  padding: 10px 24px;
+  padding: 7.5px 24px;
   cursor: pointer;
-  border-radius: 6px 6px 0 0;
+  border-radius: 6px 6px 6px 6px;
   font-size: 15px;
   font-weight: 500;
   color: #606266;
@@ -681,9 +682,37 @@ onMounted(() => {
 }
 
 .run-button {
-  padding: 12px 32px;
-  font-size: 16px;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #66b1ff, #409eff);
+  border: none;
   border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(64, 158, 255, 0.2);
+  height: auto;
+  min-height: auto;
+}
+
+.run-button:hover {
+  background: linear-gradient(135deg, #53a8ff, #3a8fdb);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(64, 158, 255, 0.3);
+}
+
+.run-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(64, 158, 255, 0.25);
+}
+
+.run-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(64, 158, 255, 0.25);
 }
 
 /* ========== 侧边栏 ========== */
