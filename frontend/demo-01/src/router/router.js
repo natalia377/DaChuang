@@ -33,7 +33,7 @@ const router = createRouter({
           component: () => import('../components/Experiment.vue'),
         },
         {
-          path: '/teach',
+          path: '/coursesection/teach',
           component: () => import('../components/teaching/Teaching.vue'),
         },
         {
@@ -46,7 +46,7 @@ const router = createRouter({
         },
         // ✅ 修改：支持动态参数
         {
-          path: '/course/:id',
+          path: '/coursesection/course/:id',
           name: 'Course',
           component: () => import('../components/teaching/Course.vue'),
         },
